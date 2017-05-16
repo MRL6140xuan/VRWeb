@@ -1,0 +1,17 @@
+.navbar-header {
+    background: #00BFFF;
+}
+
+/*设置导航头部字体颜色*/
+.icon-bar, .navbar-brand {
+    color: #ffffff;
+}
+
+.glyphicon-search {
+    font-size: 1.5em;
+}
+
+.full {
+    margin: 0px;
+    padding: 0px;
+}
