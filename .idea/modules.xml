@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VRStore.iml" filepath="$PROJECT_DIR$/.idea/VRStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/VRStore_lxx.iml" filepath="$PROJECT_DIR$/.idea/VRStore_lxx.iml" />
     </modules>
   </component>
 </project>
