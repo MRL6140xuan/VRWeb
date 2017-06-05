@@ -37,3 +37,33 @@
     font-size: 5vw;
     margin-bottom: 2px;
 }
+
+.fixed-top {
+    width: 100%;
+    position: fixed;
+    z-index: 16;
+}
+
+.homePage, .moreList {
+    margin-top: 50px;
+}
+
+.thumbnail {
+    margin-bottom: 5px;
+}
+
+.thumbnail h4 {
+    font-weight: bold;
+    font-size: 2vw;
+    margin-bottom: 2px;
+}
+
+.thumbnail p {
+    font-size: 1vw;
+    margin-bottom: 1px;
+}
+
+.title p {
+    font-size: 5vw;
+    margin-bottom: 2px;
+}

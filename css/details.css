@@ -21,6 +21,8 @@ audio, video {
     background: #00BFFF;
     text-align: center;
     line-height: 50px;
+    position: fixed;
+    z-index: 100;
 }
 
 .full {
