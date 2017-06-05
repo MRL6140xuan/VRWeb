@@ -59,41 +59,64 @@
     </div>
 
 </div>
-<div class="container-fluid ">
+<!--thumbnail-->
+<div class="container-fluid " style="margin-bottom: 0px">
     <div class="thumbnail row" style="margin-top: 4px; ">
-        <div class="col-xs-4  bg-info">
+        <div class="col-xs-4  " style="padding-left: 0px">
             <img id="img-test" src="images/1.jpg" alt="缩略图" class="img-responsive img-rounded">
         </div>
 
-        <div class="col-xs-5  bg-danger same-height">
-            <h4 class="">appName</h4>
-            <p>author</p>
-            <p style="padding-bottom: 2px">size</p>
+        <div class="col-xs-5   same-height">
+            <h4 class="text-responsive-h">appName</h4>
+            <p class="text-responsive-p1">author</p>
+            <p id="size" class="text-responsive-p2">size</p>
         </div>
-        <div class="col-xs-3 same-height bg-primary" style="overflow: hidden">
+        <div class="col-xs-3 same-height " style="overflow: hidden">
             <span class="glyphicon glyphicon-heart-empty pull-right "
-                  style="display:block;margin-right:10px;font-size: 30px;color: gray" aria-hidden="true"></span>
-            <a id="test" href="#" class="btn btn-primary btn-md btn-block text-left" style="margin-bottom: 20px">下载</a>
+                  style="display:block;margin-right:8px;font-size: 6vw;color: gray" aria-hidden="true"></span>
+            <a id="download_btn" href="#" class="btn btn-primary btn-md btn-block btn-sm" role="button">下载</a>
         </div>
+    </div>
+</div>
+<!--comment-->
+<div class="container-fluid" style="margin-top: -15px;">
+    <div class="thumbnail row">
+        <div class="col-xs-4 comment">
+            <p>评分</p>
+            <p>舒适度等级</p>
+            <p>版本</p>
+            <p>更新时间</p>
+        </div>
+        <div class="col-xs-7 col-xs-off-1 comment">
+            <p><span class="glyphicon glyphicon-star-empty"></span><span
+                    class="glyphicon glyphicon-star-empty"></span><span
+                    class="glyphicon glyphicon-star-empty"></span><span
+                    class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span>
+            </p>
+            <p>舒适度等级</p>
+            <p>版本</p>
+            <p>更新时间</p>
+        </div>
+    </div>
+</div>
+<!--introduction-->
+<div class="container-fluid" style="margin-top: -15px;padding-left: 1px;padding-right: 1px">
+    <div class="thumbnail introduction">
+        <p>现代的辅助技术能够识别并朗读由 CSS 生成的内容和特定的 Unicode 字符。为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了
+            aria-hidden="true" 属性。</p>
     </div>
 </div>
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="src/bootstrap-off-canvas-nav.js"></script>
+<script src="js/details.js"></script>
 </body>
 <script>
     $(document).ready(function () {
-        var el = $('.col-xs-4');
-        $('#img-test').css('height', $('#img-test').width());
-//        $('#test').css('margin-bottom','5px');
-        $('.same-height').css("height", el.height());
-
+        init();
     });
     $(window).resize(function () {
-        var el = $('.col-xs-4');
-        $('#img-test').css('height', $('#img-test').width());
-//        $('#test').css('margin-bottom','5px');
-        $('.same-height').css("height", el.height());
+        setHeight();
     });
 </script>
 </html>

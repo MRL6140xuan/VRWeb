@@ -27,3 +27,24 @@ audio, video {
     margin: 0;
     padding: 0;
 }
+
+.text-responsive-h {
+    font-size: 5vw;
+}
+
+.text-responsive-p1 {
+    font-size: 5vw;
+    color: gray;
+}
+
+.text-responsive-p2 {
+    font-size: 3vw;
+}
+
+.comment {
+    padding-left: 1px;
+}
+
+.comment p {
+    font-size: 4vw;
+}
