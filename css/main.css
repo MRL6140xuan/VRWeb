@@ -23,3 +23,17 @@
 .more_closed {
     padding: 2px;
 }
+
+.none {
+    display: none;
+}
+
+.moreList .list-group-item {
+    padding: 2px;
+    margin-bottom: 2px;
+}
+
+.moreList p {
+    font-size: 5vw;
+    margin-bottom: 2px;
+}
