@@ -1,7 +1,8 @@
 /**
  * Created by mrl on 2017/6/6.
  */
-var recUrl = "http://116.62.45.102:8089/VRStore/api/home/list?imsi=460000830790848&model=MATE8&lang=en&resolution=1920_1080&network=wifi&os_code=22&version_code=960&version_name=1.1.0.2351&channel=default&uid=2399&token=23uy89t23ur092ur9r0u3&uuid=324jhg9043urj29r239i9rf23uy9t23";
+// var recUrl = "http://116.62.45.102:8089/VRStore/api/home/list?imsi=460000830790848&model=MATE8&lang=en&resolution=1920_1080&network=wifi&os_code=22&version_code=960&version_name=1.1.0.2351&channel=default&uid=2399&token=23uy89t23ur092ur9r0u3&uuid=324jhg9043urj29r239i9rf23uy9t23";
+var recUrl = "http://116.62.45.102:8089/VRStore/api/home/list";
 function getJson(resourceURL) {
     var jsonObj = null;
     $.ajax({
@@ -40,7 +41,26 @@ function setHomeRecom() {
     $('#carousel-inner').append(html2);
     $('#carousel-inner').find('div').eq(0).addClass('active');
 }
-
+function getResByRestypeAndId(resTypeId, resId) {
+    var resType, url;
+    switch (resTypeId) {
+        case 1:
+            resType = "app";
+            break;
+        case 2:
+            resType = "picture";
+            break;
+        case 3:
+            resType = "video";
+        case 15:
+            resType = "video3d";
+            break;
+        default:
+            break;
+    }
+    url = "http://116.62.45.102:8089/VRStore/api/" + resType + "/find/" + resId;
+    return getJson(url);
+}
 function setTest() {
     var appName = 'apptest';
     var w1 = '<div class="row">' +
