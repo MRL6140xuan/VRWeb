@@ -76,39 +76,13 @@
     <div class="container full">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <ol id="indicators" class="carousel-indicators">
+
             </ol>
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="images/1.jpg" alt="图一">
-                    <div class="carousel-caption">
-                        <h3>hello1</h3>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/2.jpg" alt="图二">
-                    <div class="carousel-caption">
-                        <h3>hello2</h3>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/3.jpg" alt="图三">
-                    <div class="carousel-caption">
-                        <h3>hello3</h3>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/4.jpg" alt="图四">
-                    <div class="carousel-caption">
-                        <h3>hello4</h3>
-                    </div>
-                </div>
+            <div id="carousel-inner" class="carousel-inner" role="listbox">
+
             </div>
             <!-- Controls -->
             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -142,7 +116,7 @@
                 <div class="title">
                     <p>最新<span> <a href="#" class="pull-right">More</a></span></p>
                 </div>
-                <div class="row">
+                <div id="apps_new" class="row">
                     <!--一个展示-->
                     <div class="col-xs-4 col-sm-3 more_closed">
                         <div class="thumbnail">
@@ -181,8 +155,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div class="container apps_feature ">
                 <div class="title">
@@ -531,11 +503,30 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="src/bootstrap-off-canvas-nav.js"></script>
+<script src="js/main.js"></script>
 <script>
+    //    function  setTest() {
+    //        var appName='apptest';
+    //        var w1= '<div class="col-xs-4 col-sm-3 more_closed">'+
+    //            '<div class="thumbnail">'+
+    //            '<a href="#" class="">'+
+    //            '<img src="images/1.jpg" alt="图一">'+
+    //            '</a>'+
+    //            '<h4>'+appName+'</h4>'+
+    //            '<p>'+
+    //            '<span>5.0</span><span class="glyphicon glyphicon-star"></span>'+
+    //            '<span class="pull-right text-primary">免费</span>'+
+    //            '</p>'+
+    //            '</div>'+
+    //            '</div>';
+    //        $('#apps_new').append(w1);
+    //
+    //    }
     var val;
     $(document).ready(function () {
         val = $('.list-group-item p').height() * 3;
         $('.list-group-item img').css({'width': val, 'height': val});
+        setHomeRecom();
 
     });
     $(window).resize(function () {
