@@ -16,10 +16,6 @@
     padding: 0;
 }
 
-#apps img {
-    /*height: 70px;*/
-}
-
 .more_closed {
     padding: 2px;
 }
@@ -75,6 +71,38 @@
 
 #carousel-inner h3 {
     font-size: 4vw;
+}
+
+#new img {
+    width: 100%;
+    height: 60px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+#featured img {
+    width: 100%;
+    height: 60px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+#free img {
+    width: 100%;
+    height: 60px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+#popular img {
+    width: 100%;
+    height: 60px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.glyphicon-star {
+    color: #FFAC2D;
 }
 
 @media (max-width: 768px) {
