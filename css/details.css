@@ -55,7 +55,7 @@ audio, video {
     font-size: 4vw;
 }
 
-.introduction p {
+.desc p {
     font-size: 4vw;
 }
 
@@ -67,8 +67,18 @@ audio, video {
     width: 100%;
 }
 
+.glyphicon-star-empty {
+    color: #FFAC2D;
+}
+
 @media (max-width: 768px) {
     #carousel-inner img {
         height: 180px;
+    }
+}
+
+@media (min-width: 768px) {
+    #carousel-inner img {
+        height: 230px;
     }
 }

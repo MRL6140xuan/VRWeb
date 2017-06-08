@@ -23,7 +23,6 @@ function init() {
  * 图片的高宽相同*/
 function setHeight() {
     val = download_btn_el.parent().height() - 30;
-    console.log(val);
     var el = $('.col-xs-4');
     $('#img-icon').css('height', $('#img-icon').width());
     $('.same-height').css("height", el.height());
@@ -102,6 +101,31 @@ function setInfo(resObj) {
         $(this).toggleClass('glyphicon-heart').toggleClass('glyphicon-heart-empty');
     });
     $('#download_btn').attr('href', resObj.data.downloadUrl);
+    var html = '<p><span class="glyphicon glyphicon-star-empty"></span>' +
+        '<span class="glyphicon glyphicon-star-empty"></span>' +
+        '<span class="glyphicon glyphicon-star-empty"></span>' +
+        '<span class="glyphicon glyphicon-star-empty"></span>' +
+        '<span class="glyphicon glyphicon-star-empty"></span>' +
+        '</p>';
+
+    if (resObj.data.resourceType == '2') {
+        html1 = '<p>评分</p> <p>舒适度等级</p><p>分辨率</p>';
+        var level, resolution;
+        level = resObj.data.comfortLevel ? resObj.data.comfortLevel : "&nbsp";
+        resolution = resObj.data.resolution ? resObj.data.resolution : "&nbsp";
+        html2 = html + '<p>' + level + '</p><p>' + resolution + '</p>';
+    } else {
+        var level, version, updataDate;
+        level = resObj.data.comfortLevel ? resObj.data.comfortLevel : "&nbsp";
+        version = resObj.data.versionName ? resObj.data.versionName : "&nbsp";
+        updataDate = resObj.data.versionChangedOn ? resObj.data.versionChangedOn : "&nbsp";
+        html1 = '<p>评分</p> <p>舒适度等级</p> <p>版本</p> <p>更新时间</p>';
+        html2 = html + '<p>' + level + '</p> <p>' + version + '</p> <p>' + updataDate + '</p>'
+    }
+    $('.comment').eq(0).html(html1);
+    $('.comment').eq(1).html(html2);
+    $('#desc').html('<p>' + resObj.data.desc + '</p>');
+
 }
 function initResInfo() {
     getUrlParam();
