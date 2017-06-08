@@ -19,16 +19,12 @@ function getJson(resourceURL) {
 function setHomeRecom() {
     var html1 = " ";
     var html2 = " ";
-    var x1 = " ";
-    var x2 = " ";
     var tops = getJson(recUrl).data.recommend.top;
     console.log(tops);
     var indicators = $('#indicators');
     if (tops != null) {
         console.log("not null");
         $.each(tops, function (ids, obj) {
-            console.log(ids);
-            console.log(obj);
             html1 += '<li data-target="#carousel-example-generic" data-slide-to=' + ids + '></li>';
             html2 += `<div class="item "><a href="./details.html?id=${obj.id}&resourceType=${obj.resourceType}"><img class="img-responsive" src=${obj.imageUrl} alt="图片" /><div class="carousel-caption"><h3>${obj.name}</h3></div></a></div>`;
         });
@@ -60,22 +56,5 @@ function getResByRestypeAndId(resTypeId, resId) {
     }
     url = "http://116.62.45.102:8089/VRStore/api/" + resType + "/find/" + resId;
     return getJson(url);
-}
-function setTest() {
-    var appName = 'apptest';
-    var w1 = '<div class="row">' +
-        '<div class="col-xs-4 col-sm-3 more_closed">' +
-        '<div class="thumbnail">' +
-        '<a href="#" class="">' +
-        '<img src="images/1.jpg" alt="图一">' +
-        '</a>' +
-        '<h4>' + appName + '</h4>' +
-        '<p>' +
-        '<span>5.0</span><span class="glyphicon glyphicon-star"></span>' +
-        '<span class="pull-right text-primary">免费</span>' +
-        '</p>' +
-        '</div>' +
-        '</div>';
-    $('#apps_new').html(w1);
 }
 

@@ -12,7 +12,7 @@ var resId, resTypeId;//获取url的两个参数（id和typeId）
 function init() {
     var el = $('.col-xs-4');
 
-    $('#img-test').css('height', $('#img-test').width());
+    $('#img-icon').css('height', $('#img-icon').width());
     $('.same-height').css("height", el.height());
     val = download_btn_el.parent().height() - 30;
     download_btn_el.css('margin-top', val);
@@ -25,7 +25,7 @@ function setHeight() {
     val = download_btn_el.parent().height() - 30;
     console.log(val);
     var el = $('.col-xs-4');
-    $('#img-test').css('height', $('#img-test').width());
+    $('#img-icon').css('height', $('#img-icon').width());
     $('.same-height').css("height", el.height());
     download_btn_el.css('margin-top', val);
     size_el.css('margin-top', "30%");
@@ -70,8 +70,42 @@ function getResByRestypeAndId(resTypeId, resId) {
     url = "http://116.62.45.102:8089/VRStore/api/" + resType + "/find/" + resId;
     return getJson(url);
 }
+function setInfo(resObj) {
+    var html1 = " ";
+    var html2 = " ";
+    var screenShots = resObj.data.screenShots;
+    var indicators = $('#indicators');
+    $('#resName').text(resObj.data.name);
+    $('#img-icon').attr('src', resObj.data.iconUrl);
+    console.log($('#img-icon').attr('src'));
+    if (screenShots != null) {
+        console.log("not null");
+        $.each(screenShots, function (ids, obj) {
+            html1 += '<li data-target="#carousel-example-generic" data-slide-to=' + ids + '></li>';
+            html2 += `<div class="item "><img class="img-responsive" src=${obj} /><div class="carousel-caption"></div></div>`;
+        });
+    }
+    $('#indicators').append(html1);
+    $('#indicators').find('li').eq(0).addClass('active');
+    $('#carousel-inner').append(html2);
+    $('#carousel-inner').find('div').eq(0).addClass('active');
+    var brief = " ";
+    var develeper = "Thundersoft";
+    if (resObj.data.developer) {
+        develeper = resObj.data.developer;
+        console.log(develeper);
+    }
+    brief = '<h4 class="text-responsive-h">' + resObj.data.name + '</h4> <p class="text-responsive-p1" >' + develeper + '</p><p id="size" class="text-responsive-p2" style="margin-top: 30%;">' + resObj.data.size + 'M</p>';
+    console.log(brief);
+    $('#brief').html(brief);
+    $('#mark').click(function () {
+        $(this).toggleClass('glyphicon-heart').toggleClass('glyphicon-heart-empty');
+    });
+    $('#download_btn').attr('href', resObj.data.downloadUrl);
+}
 function initResInfo() {
     getUrlParam();
     currentRes = getResByRestypeAndId(resTypeId, resId);
+    setInfo(currentRes);
 
 }

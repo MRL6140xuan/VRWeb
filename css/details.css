@@ -21,8 +21,7 @@ audio, video {
     background: #00BFFF;
     text-align: center;
     line-height: 50px;
-    position: fixed;
-    z-index: 100;
+
 }
 
 .full {
@@ -40,7 +39,7 @@ audio, video {
 }
 
 .text-responsive-p1 {
-    font-size: 5vw;
+    font-size: 4vw;
     color: gray;
 }
 
@@ -58,4 +57,18 @@ audio, video {
 
 .introduction p {
     font-size: 4vw;
+}
+
+.glyphicon-heart {
+    color: #ef3f52;
+}
+
+#carousel-inner img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #carousel-inner img {
+        height: 180px;
+    }
 }
