@@ -75,8 +75,11 @@ function setInfo(resObj) {
     var screenShots = resObj.data.screenShots;
     var indicators = $('#indicators');
     $('#resName').text(resObj.data.name);
-    $('#img-icon').attr('src', resObj.data.iconUrl);
-    console.log($('#img-icon').attr('src'));
+    $('#img-icon').attr('src', resObj.data.iconUrl).click(function () {
+        if (resObj.data.resourceType != 1) {
+            window.location = './play.html?' + resId + '&' + resTypeId;
+        }
+    });
     if (screenShots != null) {
         console.log("not null");
         $.each(screenShots, function (ids, obj) {
@@ -108,7 +111,7 @@ function setInfo(resObj) {
         '<span class="glyphicon glyphicon-star-empty"></span>' +
         '</p>';
 
-    if (resObj.data.resourceType == '2') {
+    if (resObj.data.resourceType == '2' || resObj.data.resourceType == "3" || resObj.data.resourceType == "15") {
         html1 = '<p>评分</p> <p>舒适度等级</p><p>分辨率</p>';
         var level, resolution;
         level = resObj.data.comfortLevel ? resObj.data.comfortLevel : "&nbsp";

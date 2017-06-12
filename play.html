@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+    <meta name="description" content="Welcome to VRStore!">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <script src="js/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-videosphere id="videoPlay" autoplay loop="true" src="" radius='500'></a-videosphere>
+
+    <a-sky id="sky" src="" rotation="0 -100 0"></a-sky>
+</a-scene>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/play.js"></script>
+<script>
+    $(document).ready(function () {
+        setSrc();
+    });
+</script>
+</html>

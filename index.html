@@ -71,7 +71,7 @@
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
-<div class="homePage ">
+<div id="homePage" class="homePage ">
     <!--carousel-->
     <div class="container full">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -97,7 +97,7 @@
         </div>
 
     </div>
-    <!-- 应用和媒体 -->
+    <!-- 应用和媒体导航 -->
     <nav class="navbar navbar-default full" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header ">
@@ -110,34 +110,39 @@
             </div>
         </div>
     </nav>
+    <!--app和media内容-->
     <div class="tab-content">
         <div id="apps" class="tab-pane fade in active">
-            <div class="container apps">
-                <div class="title">
-                    <p>最新<span> <a href="#" class="pull-right">More</a></span></p>
+            <div class="container apps-new">
+                <div class="title1">
+                    <p>最新<span> <a href="#resList" data-title="最新" data-category="new"
+                                   class="pull-right">More</a></span></p>
                 </div>
                 <div id="new" class="row">
                 </div>
             </div>
             <div class="container apps_feature ">
-                <div class="title">
-                    <p>特色<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title1">
+                    <p>特色<span> <a href="#resList" data-title="特色" data-category="featured" class="pull-right">More</a></span>
+                    </p>
                 </div>
                 <div id="featured" class="row">
 
                 </div>
             </div>
             <div class="container apps_free ">
-                <div class="title">
-                    <p>免费<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title1">
+                    <p>免费<span> <a href="#resList" data-title="免费" data-category="free"
+                                   class="pull-right">More</a></span></p>
                 </div>
                 <div id="free" class="row">
 
                 </div>
             </div>
             <div class="container apps_popular ">
-                <div class="title">
-                    <p>最受欢迎<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title1">
+                    <p>最受欢迎<span> <a href="#resList" data-title="最受欢迎" data-category="popular"
+                                     class="pull-right">More</a></span></p>
                 </div>
                 <div id="popular" class="row">
 
@@ -146,8 +151,9 @@
         </div>
         <div id="media" class="tab-pane fade">
             <div class="container 360Picture">
-                <div class="title">
-                    <p>360图片<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title2">
+                    <p>360图片<span> <a href="#resList" data-title="360图片" data-categoryid="5" data-category="picture"
+                                      class="pull-right">More</a></span></p>
                 </div>
                 <div id="picture" class="row">
 
@@ -155,16 +161,18 @@
 
             </div>
             <div class="container 360video">
-                <div class="title">
-                    <p>360视频<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title2">
+                    <p>360视频<span> <a href="#resList" data-title="360视频" data-categoryid="4" data-category="video"
+                                      class="pull-right">More</a></span></p>
                 </div>
-                <div id="Video3D" class="row">
+                <div id="Video360" class="row">
 
                 </div>
             </div>
             <div class="container 2DVideo ">
-                <div class="title">
-                    <p>2D视频<span> <a href="#" class="pull-right">More</a></span></p>
+                <div class="title2">
+                    <p>2D视频<span> <a href="#resList" data-title="2D视频" data-categoryid="15" data-category="video"
+                                     class="pull-right">More</a></span></p>
                 </div>
                 <div id="video2D" class="row">
 
@@ -173,37 +181,33 @@
         </div>
     </div>
 </div>
-<div class="moreList none">
-    <h4 style="font-size: 5vw"><strong>特色</strong></h4>
-    <div class="list-group">
+<div id="resList" class="moreList  none">
+    <h4 style="font-size: 5vw;padding-top: 10px"><strong id="categoryListTitle">&nbsp</strong></h4>
+    <div id="listGroup" class="list-group">
         <a class="list-group-item">
             <div class="media">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <img src="images/1.jpg" alt="" class="img-rounded"
-                             style="width: 64px;height: 64px;">
-                    </div>
-                    <div class="media-body">
-                        <p><strong>appName</strong></p>
-                        <p>4.0<span class="glyphicon glyphicon-star"></span></p>
-                        <p class="text-right text-primary">免费</p>
-                    </div>
+                <div class="media-left media-middle">
+                    <img src="images/1.jpg" alt="" class="img-rounded"
+                         style="width: 64px;height: 64px;">
+                </div>
+                <div class="media-body">
+                    <p><strong>appName</strong></p>
+                    <p>4.0<span class="glyphicon glyphicon-star"></span></p>
+                    <p class="text-right text-primary">免费</p>
                 </div>
             </div>
         </a>
         <a class="list-group-item">
             <div class="media">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <img src="images/1.jpg" alt="" class="img-rounded"
-                             style="width: 64px;height: 64px;">
-                    </div>
+                <div class="media-left media-middle">
+                    <img src="http://vrstore-uploadfiles.oss-cn-shanghai.aliyuncs.com/VRStore_uploadfiles/app/icon/bh5YbPbcAG.jpg"
+                         class="img-rounded" style="width: 64px;height: 64px;">
+                </div>
                     <div class="media-body">
-                        <p><strong>appName</strong></p>
-                        <p>4.0<span class="glyphicon glyphicon-star"></span></p>
+                        <p><strong>Jurassic VR</strong></p>
+                        <p>4<span class="glyphicon glyphicon-star"></span></p>
                         <p class="text-right text-primary">免费</p>
                     </div>
-                </div>
             </div>
         </a>
     </div>
@@ -216,16 +220,15 @@
 <script>
     var val;
     $(document).ready(function () {
-        val = $('.list-group-item p').height() * 3;
-        $('.list-group-item img').css({'width': val, 'height': val});
         setHomeRecom();
         setHomeAppsList();
         setHomeMediaList();
+        showMoreList()
     });
     $(window).resize(function () {
-        val = $('.list-group-item p').height() * 3;
-        $('.list-group-item img').css({'width': val, 'height': val});
+
     });
+
 </script>
 </body>
 </html>
